@@ -1,12 +1,12 @@
 :root {
   --white: #FFFFFF;
-  --tan-1: #FBF9F6;
-  --tan-2: #E7E2DD;
-  --tan-3: #E2D9D1;
-  --tan-4: #D3C1AE;
+  --grey-1: #F7F7F7;
+  --grey-2: #E0E0E0;
+  --grey-3: #BDBDBD;
+  --grey-4: #757575;
   --black: #000;
-  --text-light: #968c84;
-  --text-dark: #615954;
+  --text-light: #BDBDBD;
+  --text-dark: #424242;
 }
 
 *, *:before, *:after {
@@ -20,9 +20,12 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--tan-4);
-  padding: 2vmin;
+  background-color: var(--grey-1);
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2vmin;
 }
 
 code {
@@ -31,7 +34,12 @@ code {
 }
 
 #root {
-  height: 100%;
+  width: 80%;
+  max-width: 650px;
+  background-color: var(--white);
+  padding: 2vmin;
+  border-radius: 1vmin;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .align-ctr {
@@ -64,36 +72,25 @@ code {
   overflow-y: scroll;
 }
 
+
 .section-heading {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: var(--tan-1);
+  background-color: var(--grey-2);
   color: var(--text-dark);
-  border: .1vmin solid var(--tan-3);
-  border-radius: 1vmin;
-  padding: .6vmin;
-  text-align: center;
-  font-size: 2vmin;
 }
 
 .form-container {
-  padding: 3vmin;
-  background-color: var(--tan-1);
-  border: .1vmin solid var(--tan-3);
-  border-radius: 1vmin;
+  background-color: var(--grey-2);
 }
 
 p.error-message {
   color: var(--black);
-  text-align: center;
 }
 
-form {
+.forms {
   display: grid;
   grid-template-columns: 1fr 3fr;
   gap: 1.25vmin;
-  color: var(--text-light);
+  color: var(--black);
 }
 
 label {
@@ -103,13 +100,10 @@ label {
 }
 
 input {
-  padding: 1vmin;
-  font-size: 2vmin;
-  border: .1vmin solid var(--tan-3);
-  border-radius: .5vmin;
   color: var(--text-dark);
-  background-image: none !important; /* prevent lastpass */
-  outline: none;
+  background-color: var(--white);
+  text-align: left;
+  padding-left: .5rem;
 }
 
 input:focus {
@@ -117,18 +111,8 @@ input:focus {
 }
 
 button, a.button {
-  margin: 1vmin;
-  padding: 1vmin;
-  color: var(--white);
   background-color: var(--black);
-  font-size: 2vmin;
-  font-weight: bold;
-  text-decoration: none;
-  text-align: center;
-  border: .1vmin solid var(--tan-2);
-  border-radius: .5vmin;
-  outline: none;
-  cursor: pointer;
+  color: white;
 }
 
 button.btn-sm {
@@ -142,11 +126,34 @@ button.btn-xs {
 }
 
 button:disabled, form:invalid button[type="submit"] {
-  cursor: not-allowed;
-  background-color: var(--tan-4);
+  background-color: var(--grey-3);
 }
 
 button[type="submit"] {
   grid-column: span 2;
   margin: 1vmin 0 0;
+}
+
+.NoteCard {
+  padding: .5rem;
+  border: grey solid 1px;
+  background-color: lightgrey;
+  border-radius: 5px;
+  margin: .5rem;
+}
+
+.NotesContainer {
+  max-height: 30rem; 
+  overflow-y: auto;
+  border: 1px solid #ccc; 
+  border-radius: 8px;
+  padding: 10px; 
+  margin-top: 10px; 
+}
+
+.NavBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2px; 
 }

@@ -1,3 +1,3 @@
-# MERN-Stack Infrastructure
+# MERN-Quick-Notes
 
-Clone this repo for the starter code of a MERN-Stack Project
+A simple note making app as practice for learning the MERN stack
